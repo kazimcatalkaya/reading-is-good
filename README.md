@@ -1,4 +1,4 @@
-# READINISGOOD
+# READING IS GOOD
 
 Bu uygulama ile kitap siparişi verilir ,siparişler izlenir.
 
