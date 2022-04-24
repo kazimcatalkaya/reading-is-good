@@ -22,7 +22,7 @@ Uygulamanın ana dizininde terminal açılır.
 `mvn clean package docker:build` komutu ile uygulama build edilir ve docker image olusturulur.
 `docker-compose up -d` komutu çalıştırılarak docker compose dosyası içerisinde ki servisler ayağa kaldırılır.
 
-## Uygulama arayüzleri:
+## Uygulama Arayüzleri
 Swagger UI ile API dökümantasyonuna erişilir.
 
 SwaggerUI URL http://localhost:8080/swagger-ui.html
