@@ -1,0 +1,45 @@
+version: '3.7'
+
+services:
+  mongo-db-reading-is-good:
+    container_name: db-reading-is-good
+    image: mongo
+    networks:
+      - mongo-network
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_DATABASE=readingIsGood
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    ports:
+      - '27017:27017'
+
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    restart: always
+    networks:
+      - mongo-network
+    depends_on:
+      - mongo-db-reading-is-good
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo-db-reading-is-good
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=root
+      - ME_CONFIG_BASICAUTH_USERNAME=user
+      - ME_CONFIG_BASICAUTH_PASSWORD=pass
+    ports:
+      - '8081:8081'
+
+  reading-is-good-app:
+    image: reading-is-good
+    restart: always
+    depends_on:
+      - mongo-db-reading-is-good
+    networks:
+      - mongo-network
+    ports:
+      - '8080:8080'
+
+networks:
+  mongo-network:
+    driver: bridge

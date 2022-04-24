@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "51496a43-0e73-4551-b376-25da2fd962bb",
+		"name": "Reading is Good",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1-Admin login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin\",\r\n  \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customers/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-Kitap oluşturma / Dostoyevski",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX01BTkFHRVIifV0sImlhdCI6MTY1MDgzNjQ1OCwiZXhwIjoxNjUxOTY4MDAwfQ.Qo9WCQgfJBEw1uR5bp_nyDHJOIWVzAa86YvTFh5lFZn23CHYvFBlFSdNYaqXsZ3FhFkWucLC8Y1l65j6SGpv4Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"author\": \"Dostoyevski \",\r\n  \"name\": \"Suç ve Ceza\",\r\n  \"price\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3-Kitap oluşturma / Victor Hugo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX01BTkFHRVIifV0sImlhdCI6MTY1MDgzNjQ1OCwiZXhwIjoxNjUxOTY4MDAwfQ.Qo9WCQgfJBEw1uR5bp_nyDHJOIWVzAa86YvTFh5lFZn23CHYvFBlFSdNYaqXsZ3FhFkWucLC8Y1l65j6SGpv4Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"author\": \"Victor Hugo\",\r\n  \"name\": \"Sefiller\",\r\n  \"price\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4-Kitapları listeleme",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5-Kitap Güncelleme",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX01BTkFHRVIifV0sImlhdCI6MTY1MDgzNjQ1OCwiZXhwIjoxNjUxOTY4MDAwfQ.Qo9WCQgfJBEw1uR5bp_nyDHJOIWVzAa86YvTFh5lFZn23CHYvFBlFSdNYaqXsZ3FhFkWucLC8Y1l65j6SGpv4Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sefiller v2\",\r\n    \"author\": \"Victor Hugo v2\",\r\n    \"price\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6-Kitap listeleme",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7-Kullanıcı kayıt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"kullanici@kullanici.com\",\r\n  \"name\": \"kullanici\",\r\n  \"password\": \"kullanici\",\r\n  \"surname\": \"kulalnici\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customers/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8-kullanici girişi",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"kullanici@kullanici.com\",\r\n  \"password\": \"kullanici\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customers/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9-Kitap sipariş - 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdWxsYW5pY2lAa3VsbGFuaWNpLmNvbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1VTRVIifV0sImlhdCI6MTY1MDgzNzU2NywiZXhwIjoxNjUxOTY4MDAwfQ.Ab7-yk-YjKi0ZiuWXne4eyAlLgF9IutFroSt62fah9n5lIZOlr_jGz_lKmk138a4Xj7kF9mGzfrrWu9K9lHpkw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookId\": 1,\r\n  \"quantity\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10-Kitap sipariş - 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdWxsYW5pY2lAa3VsbGFuaWNpLmNvbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1VTRVIifV0sImlhdCI6MTY1MDgzNzU2NywiZXhwIjoxNjUxOTY4MDAwfQ.Ab7-yk-YjKi0ZiuWXne4eyAlLgF9IutFroSt62fah9n5lIZOlr_jGz_lKmk138a4Xj7kF9mGzfrrWu9K9lHpkw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookId\": 2,\r\n  \"quantity\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11 - Sipariş görüntüleme ID ile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdWxsYW5pY2lAa3VsbGFuaWNpLmNvbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1VTRVIifV0sImlhdCI6MTY1MDgzNzU2NywiZXhwIjoxNjUxOTY4MDAwfQ.Ab7-yk-YjKi0ZiuWXne4eyAlLgF9IutFroSt62fah9n5lIZOlr_jGz_lKmk138a4Xj7kF9mGzfrrWu9K9lHpkw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orders/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12-Kullanıcı tüm siparişler",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdWxsYW5pY2lAa3VsbGFuaWNpLmNvbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1VTRVIifV0sImlhdCI6MTY1MDgzNzU2NywiZXhwIjoxNjUxOTY4MDAwfQ.Ab7-yk-YjKi0ZiuWXne4eyAlLgF9IutFroSt62fah9n5lIZOlr_jGz_lKmk138a4Xj7kF9mGzfrrWu9K9lHpkw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/customers/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13-Sipariş Listele/Tarih aralığı",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/orders/date-interval?startDate=2022-01-01&endDate=2023-01-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"date-interval"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2022-01-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2023-01-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14 - İstistikler",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdWxsYW5pY2lAa3VsbGFuaWNpLmNvbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1VTRVIifV0sImlhdCI6MTY1MDgzNzU2NywiZXhwIjoxNjUxOTY4MDAwfQ.Ab7-yk-YjKi0ZiuWXne4eyAlLgF9IutFroSt62fah9n5lIZOlr_jGz_lKmk138a4Xj7kF9mGzfrrWu9K9lHpkw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/statistics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
